@@ -10,6 +10,31 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   final _usernameController = TextEditingController(text: '');
+  final _passwordController = TextEditingController(text: '');
+
+
+String? _validatePassword(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Please enter your password';
+    }
+    if (value.length < 8) {
+      return 'Password must be at least 8 characters long';
+    }
+    if (!RegExp(r'[A-Z]').hasMatch(value)) {
+      return 'Password must contain at least one uppercase letter';
+    }
+    if (!RegExp(r'[a-z]').hasMatch(value)) {
+      return 'Password must contain at least one lowercase letter';
+    }
+    if (!RegExp(r'[0-9]').hasMatch(value)) {
+      return 'Password must contain at least one digit';
+    }
+    if (!RegExp(r'[\W]').hasMatch(value)) {
+      return 'Password must contain at least one special character';
+    }
+    return null;
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +64,7 @@ class _LoginPageState extends State<LoginPage> {
               width: 150,
             ),
             const SizedBox(height: 80),
-            TextField(
+            TextFormField(
               controller: _usernameController,
               decoration: const InputDecoration(
                 labelText: 'Username',
@@ -52,8 +77,28 @@ class _LoginPageState extends State<LoginPage> {
               style: const TextStyle(color: Colors.white),
               cursorColor: Colors.orange,
             ),
-            const SizedBox(height: 16),
+ const SizedBox(height: 16),
             
+
+            TextFormField(
+              controller: _passwordController,
+              obscureText: true,
+              decoration: const InputDecoration(
+                labelText: 'Password',
+                labelStyle: TextStyle(color: Colors.white70),
+                border: OutlineInputBorder(),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.orange),
+                ),
+              ),
+              style: const TextStyle(color: Colors.white),
+              cursorColor: Colors.orange,
+               validator: _validatePassword,
+            ),
+            
+              
+           
+
             const SizedBox(height: 32),
             Container(
               width: double.infinity, 

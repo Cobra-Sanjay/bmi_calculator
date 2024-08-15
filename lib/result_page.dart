@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'credit_page.dart';
 
 class ResultPage extends StatelessWidget {
   final double bmi;
@@ -47,8 +46,6 @@ class ResultPage extends StatelessWidget {
               'Suggested weight (kg) : ',
               '${(18.5 * (height / 100) * (height / 100)).toStringAsFixed(1)} ~ ${(24.9 * (height / 100) * (height / 100)).toStringAsFixed(1)}'
             ),
-            const SizedBox(height: 20),
-            _creditsButton(context),
           ],
         ),
       ),
@@ -95,25 +92,6 @@ class ResultPage extends StatelessWidget {
     return ListTile(
       title: Text(title, style: const TextStyle(fontSize: 16)),
       trailing: Text(trailing, style: const TextStyle(fontSize: 16)),
-    );
-  }
-
-  Widget _creditsButton(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const CreditPage(),
-          ),
-        );
-      },
-      style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.orange,
-        padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-        textStyle: const TextStyle(fontSize: 18),
-      ),
-      child: const Text('Credits'),
     );
   }
 

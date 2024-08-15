@@ -43,9 +43,11 @@ A Flutter application that calculates Body Mass Index (BMI) and provides analysi
 2. Press the "Calculate" button to see your BMI.
 3. View your BMI category and suggested weight range.
 4. Access the Credits page for additional information.
-
+   
 ## Screenshots
-Include screenshots of the app interface here (optional).
+![login](https://github.com/user-attachments/assets/06f0170d-5d27-4db0-9fc3-79cd8b4f21e7)
+![home](https://github.com/user-attachments/assets/93c25b18-8c08-421f-9dba-68c3d16d69bb)
+![result](https://github.com/user-attachments/assets/bf2112d4-34b3-4f66-8b09-fa8d9e78bb7e)
 
 ## Contributions
 Contributions are welcome! Please fork this repository, create a new branch, and submit a pull request.

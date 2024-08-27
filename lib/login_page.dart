@@ -12,13 +12,9 @@ class _LoginPageState extends State<LoginPage> {
   final _usernameController = TextEditingController(text: '');
   final _passwordController = TextEditingController(text: '');
 
-
   void _login() {
     if (_passwordController.text == '1234') {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => HomePage()),
-      );
+      Navigator.pushReplacementNamed(context, '/home');
     } else {
       _showErrorDialog();
     }
@@ -41,7 +37,6 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -84,9 +79,7 @@ class _LoginPageState extends State<LoginPage> {
               style: const TextStyle(color: Colors.white),
               cursorColor: Colors.orange,
             ),
- const SizedBox(height: 16),
-            
-
+            const SizedBox(height: 16),
             TextFormField(
               controller: _passwordController,
               obscureText: true,
@@ -100,19 +93,12 @@ class _LoginPageState extends State<LoginPage> {
               ),
               style: const TextStyle(color: Colors.white),
               cursorColor: Colors.orange,
-               validator: _validatePassword,
             ),
-            
-              
-           
-
             const SizedBox(height: 32),
             Container(
               width: double.infinity, 
               child: ElevatedButton(
-                onPressed: () {
-                  Navigator.pushReplacementNamed(context, '/home');
-                },
+                onPressed: _login, 
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.transparent, 
                   padding: EdgeInsets.zero, 

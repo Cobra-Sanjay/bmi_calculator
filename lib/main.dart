@@ -3,9 +3,16 @@ import 'login_page.dart';
 import 'home_page.dart';
 import 'result_page.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  await initialization(null);  // splash screen wait
+
   runApp(const MyApp());
+}
+
+Future initialization(BuildContext? context) async {
+  await Future.delayed(const Duration(seconds: 3));
 }
 
 class MyApp extends StatelessWidget {

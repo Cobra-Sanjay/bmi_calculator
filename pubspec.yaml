@@ -29,7 +29,6 @@ flutter:
     - assets/bmi.png
 
 flutter_native_splash:
-  color: "#000000"
   image: assets/splash_logo.png
   background_image: assets/splash_bg.png
   android: true

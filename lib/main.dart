@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'login_page.dart';
+// import 'login_page.dart';
 import 'home_page.dart';
 import 'result_page.dart';
 
@@ -32,9 +32,9 @@ class MyApp extends StatelessWidget {
           bodyMedium: TextStyle(color: Colors.white70),
         ),
       ),
-      initialRoute: '/',
+      initialRoute: '/home',
       routes: {
-        '/': (context) => const LoginPage(),
+//        '/': (context) => const LoginPage(),
         '/home': (context) => const HomePage(),
         '/result': (context) => const ResultPage(
               bmi: 0.0,
